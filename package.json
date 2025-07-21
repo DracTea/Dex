@@ -7,8 +7,9 @@
     "@types/bun": "latest"
   },
   "scripts": {
-    "start": "bun run index.ts",
-    "build": "bun build index.ts --outdir=dist --target=node"
+    "dev": "bun run server.ts",
+    "start": "bun run dist/server.js",
+    "build": "bun build server.ts --outfile dist/server.js --target bun"
   },
   "peerDependencies": {
     "typescript": "^5"
