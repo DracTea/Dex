@@ -5,6 +5,9 @@ node_modules
 out
 dist
 *.tgz
+vendor
+ap.hot
+bun.lock
 
 # code coverage
 coverage

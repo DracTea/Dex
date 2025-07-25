@@ -1,0 +1,20 @@
+{
+    "name": "dracula/apaneldocs",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "files": [
+            "bootstrap/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Mantas",
+            "email": "mantas.evomedia@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "^7.3"
+    }
+}
