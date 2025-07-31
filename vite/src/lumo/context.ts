@@ -39,7 +39,6 @@ class Context {
 
     this.observer = new MutationObserver(callback);
     this.observer.observe(root, { characterData: true, childList: true, subtree: true });
-
   }
 
   async initBlock(el: Element) {

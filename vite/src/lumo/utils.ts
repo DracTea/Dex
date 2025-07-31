@@ -8,6 +8,10 @@ function walk(el: Element, callback: (el: Element) => boolean | void) {
   }
 }
 
+function generateId(prefix = 'v-') {
+  return `${prefix}${Math.random().toString(36).substr(2, 9)}`
+}
+
 function findControllers(element: HTMLDivElement) {
   const roots = [...element.querySelectorAll(`[v-controller]`)].filter(
     (root) => !root.matches(`[v-controller] [v-controller]`)
@@ -16,4 +20,4 @@ function findControllers(element: HTMLDivElement) {
   return roots;
 }
 
-export { walk, findControllers }
+export { walk, findControllers, generateId };
