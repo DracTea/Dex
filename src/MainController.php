@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 
 use Symfony\Component\HttpFoundation\Response;
@@ -9,23 +10,14 @@ class MainController {
     $vite = Vite::make()
       ->useHotFile('/public/ap.hot')
       ->useBuildDirectory('public/dist')
-      ->withEntryPoints(['main.ts'])
+      ->withEntryPoints(['src/main.ts'])
       ->toHtml();
 
-    return new Response(
-      '<!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>My App</title>
-          ' . $vite . '
-      </head>
-      <body>
-          <h1>Hello, World!</h1>
-      </body>
-      </html>'
-    );
+    ob_start();
+    include __DIR__ . '/../template/index.php';
+    $html = ob_get_clean();
+
+    return new Response($html);
   }
 
   public function hello($name = 'World') {
